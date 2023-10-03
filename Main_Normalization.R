@@ -241,7 +241,7 @@ Guarantors_table <- left_join(Guarantors_table,Guarantors_groups, by = ("Guarant
 Guarantors_table <- Guarantors_table[,-c(5,6,7)]
 
 Guarantors_table <- Guarantors_table %>% na.omit(.)
-Guarantors_table <- Guarantors_table %>% mutate(Loans_Group_ID = paste0("LG-", 550 + row_number()))
+Guarantors_table <- Guarantors_table %>% mutate(Loans_Group_ID = paste0("LG_", 550 + row_number()))
 
 #pivot table Guarantors group:
 
@@ -273,7 +273,7 @@ Loans_ID_Dependent$GBV_Interest <- round(as.numeric(Loans_ID_Dependent$GBV_Inter
 Asset_table <- Loans_ID_Dependent[,c(1,3,10)] %>% na.omit(.)
 
 Type_Mortgage_table <- Loans_ID_Dependent %>% select(Type_Of_Mortgage ) %>% na.omit(.) %>% distinct()
-Type_Mortgage_table <- Type_Mortgage_table %>% mutate(Type_ID = paste0('ToM-0',  + row_number())) 
+Type_Mortgage_table <- Type_Mortgage_table %>% mutate(Type_ID = paste0('ToM_0',  + row_number())) 
 
 Asset_table <- left_join(Asset_table,Type_Mortgage_table, by = ("Type_Of_Mortgage"="Type_Of_Mortgage") )
 Asset_table <- Asset_table %>% select(-3)
