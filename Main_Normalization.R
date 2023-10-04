@@ -1,3 +1,8 @@
+install.packages("renv")
+renv::init() 
+#renv::install()
+#renv::remove()
+
 install.packages("xlsx")
 install.packages("str2str")
 install.packages("conflicted")
@@ -15,6 +20,11 @@ conflict_prefer('select','dplyr','MASS')
 conflict_prefer('filter','dplyr','MASS')
 conflict_prefer('filter','dplyr','stats')
 conflicts_prefer(dplyr::filter)
+
+
+renv::snapshot()
+#renv::status()
+#renv::restore()
 
 # load the function created in file: Functions.R:
 source('Functions.R')
