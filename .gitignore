@@ -4,3 +4,4 @@
 .Ruserdata
 # ignore xlsx files:
 *.xlsx
+DATA/

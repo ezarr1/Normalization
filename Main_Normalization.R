@@ -28,10 +28,10 @@ renv::snapshot()
  
 # load the function created in file: Functions.R:
 source('Functions.R')
-source('Matrix_function_dependencies.R')
+
 
 #Load NDG table:
-NDG_table <- read_excel("DATATAPE INVESTITORE  BCC ANNIA CUTOFF 25102022.xlsx", sheet = "NDG")
+NDG_table <- read_excel("DATA/DATATAPE INVESTITORE  BCC ANNIA CUTOFF 25102022.xlsx", sheet = "NDG")
 
 #Basic modifications for column names and NAs removal:
 NDG_table <- NDG_table %>% rename(Region=`Borrower's Region`, Tax_ID = 'Tax ID', Name = 'BorrowerName')
@@ -89,7 +89,7 @@ print(possible_keys_NAs_perc)
 
 
 # Load the Loans_table:
-Loans <- read_excel("DATATAPE INVESTITORE  BCC ANNIA CUTOFF 25102022.xlsx", sheet = "LOANS")
+Loans <- read_excel("DATA/DATATAPE INVESTITORE  BCC ANNIA CUTOFF 25102022.xlsx", sheet = "LOANS")
 Loans_table <- Loans[-1, ] %>% row_to_names(1)
 
 

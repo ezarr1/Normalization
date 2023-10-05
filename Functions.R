@@ -1,6 +1,6 @@
-install.packages("xlsx")
-install.packages("str2str")
-install.packages("conflicted")
+#install.packages("xlsx")
+#install.packages("str2str")
+#install.packages("conflicted")
 
 library(tidyr)
 library(readxl)
